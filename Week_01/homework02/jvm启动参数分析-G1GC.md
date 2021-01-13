@@ -1,8 +1,10 @@
-启动参数：
+1、启动参数：
 java -jar -Xms2400m -Xmx2400m -Xmn800m -XX:+UseG1GC -XX:ParallelGCThreads=8 -XX:ConcGCThreads=8 
   gateway-server-0.0.1-SNAPSHOT.jar
-  
-执行命令：jmap -heap 2728:
+默认GC线程数 = 物理核心*5/8+3 = 16*5/8+3 = 13
+本次GC线程数设置为8
+
+2、执行命令：jmap -heap 2728:
 Attaching to process ID 2728, please wait...
 Debugger attached successfully.
 Server compiler detected.
