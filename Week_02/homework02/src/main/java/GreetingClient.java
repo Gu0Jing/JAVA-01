@@ -1,15 +1,6 @@
 import java.io.*;
 import java.net.Socket;
 
-/**
- * 类作用:
- * 项目名称:  whale
- * 包:      PACKAGE_NAME
- * 类名称:   GreetingClient
- * 类描述:   类功能详细描述
- * 创建人:    GuoJing
- * 创建时间:  2021/1/22/0022 21:14
- */
 public class GreetingClient {
     public static void main(String [] args)
     {

@@ -5,15 +5,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 
-/**
- * 类作用:
- * 项目名称:  whale
- * 包:      PACKAGE_NAME
- * 类名称:   GreetingServer
- * 类描述:   类功能详细描述
- * 创建人:    GuoJing
- * 创建时间:  2021/1/22/0022 21:11
- */
 public class GreetingServer extends Thread {
     private ServerSocket serverSocket;
 
@@ -21,6 +12,19 @@ public class GreetingServer extends Thread {
     {
         serverSocket = new ServerSocket(port);
 //        serverSocket.setSoTimeout(10000);
+    }
+
+    public static void main(String [] args)
+    {
+        int port = Integer.parseInt("8804");
+        try
+        {
+            Thread t = new GreetingServer(port);
+            t.run();
+        }catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void run()
@@ -48,16 +52,5 @@ public class GreetingServer extends Thread {
             }
         }
     }
-    public static void main(String [] args)
-    {
-        int port = Integer.parseInt("8801");
-        try
-        {
-            Thread t = new GreetingServer(port);
-            t.run();
-        }catch(IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
+
 }
